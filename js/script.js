@@ -24,12 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
       // Mobil cihaz kontrolü
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       if (isMobile) {
-        const telefon = "905531112233"; // varsayılan numara veya teknik yetkiliye göre değiştirilebilir
+        // Kullanıcının yazdığı telefon numarasını işleyelim (başındaki 0'ı sil)
+        let rawPhone = form['İletişim'].value.trim();
+        if (rawPhone.startsWith('0')) {
+          rawPhone = rawPhone.slice(1);
+        }
+        const telefon = "90" + rawPhone;
+
         const metin = `Yeni Form Kaydı:
 Gemi: ${form['Gemi Adı'].value}
 Mevki: ${form['Mevki'].value}
 İş: ${form['İş Tanımı'].value}
 Durum: ${form['Durum'].value}`;
+
         const smsLink = `sms:${telefon}?body=${encodeURIComponent(metin)}`;
         window.location.href = smsLink;
       }
