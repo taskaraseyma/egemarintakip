@@ -1,86 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egemarin İş Takip ve Yönetim Sistemi</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egemarin İş Takip ve Yönetim Sistemi</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form name="servistakip" class="kart">
-  <div class="satir">
-    <div class="etiket">Tarih:</div>
-    <div class="icerik">
-      <input type="date" id="tarih" name="Tarih" required>
+  <form name="servistakip" class="kart">
+    <div class="satir">
+      <div class="etiket">Tarih:</div>
+      <div class="icerik">
+        <input type="date" id="tarih" name="Tarih" required>
+      </div>
     </div>
-  </div>
 
-  <div class="satir">
-    <div class="etiket">Gemi Adı:</div>
-    <div class="icerik">
-      <input type="text" id="gemiadi" name="Gemi Adı" placeholder="Gemi adını girin" required>
+    <div class="satir">
+      <div class="etiket">Gemi Adı:</div>
+      <div class="icerik">
+        <input type="text" id="gemiadi" name="Gemi Adı" placeholder="Gemi adını girin" required>
+      </div>
     </div>
-  </div>
 
-  <div class="satir">
-    <div class="etiket">Mevki:</div>
-    <div class="icerik">
-      <input type="text" id="mevki" name="Mevki" placeholder="Mevkisini yazın" required>
+    <div class="satir">
+      <div class="etiket">Mevki:</div>
+      <div class="icerik">
+        <input type="text" id="mevki" name="Mevki" placeholder="Mevkisini yazın" required>
+      </div>
     </div>
-  </div>
 
-  <div class="satir">
-    <div class="etiket">İletişim:</div>
-    <div class="icerik">
-      <input type="tel" id="iletisim" name="İletişim" placeholder="05xx xxx xx xx" pattern="05[0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}" required>
+    <div class="satir">
+      <div class="etiket">İletişim:</div>
+      <div class="icerik">
+        <input type="tel" id="iletisim" name="İletişim" placeholder="05461234567" pattern="0?5[0-9]{8}" maxlength="11" required>
+        <small style="color:#777;">Lütfen başında 0 ile birlikte 11 haneli telefon girin</small>
+      </div>
     </div>
-  </div>
 
-  <div class="satir">
-    <div class="etiket">İş Tanımı:</div>
-    <div class="icerik">
-      <input type="text" id="isTanimi" name="İş Tanımı"placeholder="Yapılan işi açıklayın" required>
+    <div class="satir">
+      <div class="etiket">İş Tanımı:</div>
+      <div class="icerik">
+        <input type="text" id="isTanimi" name="İş Tanımı" placeholder="Yapılan işi açıklayın" required>
+      </div>
     </div>
-  </div>
 
-  <div class="satir">
-    <div class="etiket">Teknik Yetkili:</div>
-    <div class="icerik">
-      <select id="teknikyetkili" name="Teknik Yetkili" required>
-        <option value="" disabled selected>Yetkili seçin</option>
-        <option value="AliYilmaz">Ali Yılmaz</option>
-        <option value="FatmaDemir">Fatma Demir</option>
-        <option value="OguzKaya">Oğuz Kaya</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="satir">
-    <div class="etiket">Durum:</div>
-    <div class="icerik">
-      <select id="durum" name="Durum" required>
-        <option value="acil">Acil</option>
-        <option value="beklemede">Beklemede</option>
-        <option value="tamamlandi">Tamamlandı</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="satir">
-    <div class="etiket">İşlem:</div>
-    <div class="icerik butonlar">
-      <button type="reset" class="sil">Sil</button>
-      <button type="submit" class="tasi" id="gonder">Gönder</button>
-      <button type="button" class="pdf">PDF</button>
-      <button type="button" class="resim">Resim Yükle</button>
-    </div>
-  </div>
-</form>
-   
-<div id="uyariModal" class="modal">
-  <div class="modal-icerik" id="uyariMesaji">Veri gönderiliyor, lütfen bekleyin...</div>
-</div>
-
-<script src="js/script.js"></script>
-</body>
-</html>
+    <div class="satir">
+      <div class="etiket">Teknik Yetkili:</div>
+      <div class="icerik">
+        <select id="teknikyetkili" name="Teknik Yetkili" required>
+          <option value="" disabled selected>Yetkili seçin</option>
+          
